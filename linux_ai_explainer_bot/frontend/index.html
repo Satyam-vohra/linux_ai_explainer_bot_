@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Linux Command Explainer</title>
+</head>
+<body>
+  <h1>Enter Linux Command</h1>
+  <input type="text" id="command" placeholder="e.g. rm -rf /" />
+  <button onclick="sendCommand()">Explain</button>
+  <pre id="output"></pre>
+
+  <script>
+    async function sendCommand() {
+      const cmd = document.getElementById("command").value;
+      const res = await fetch("http://localhost:8000/explain", {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify({ command: cmd })
+      });
+      const data = await res.json();
+      document.getElementById("output").innerText = JSON.stringify(data, null, 2);
+    }
+  </script>
+</body>
+</html>
