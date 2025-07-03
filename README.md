@@ -8,6 +8,7 @@ A powerful FastAPI-based tool that explains any Linux command using OpenAI and a
 
 ---
 
+
 ## 🚀 Features
 
 - 🧾 **AI Explanation** of any Linux command using GPT-3.5/4
